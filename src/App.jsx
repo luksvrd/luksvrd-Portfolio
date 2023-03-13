@@ -1,26 +1,24 @@
-import { useReducer } from "react";
-import Bucket from "./components/Bucket";
-import Form from "./components/BucketForm";
-import reducer from "./bucket-list-reducer";
-
-const buckets = JSON.parse(localStorage.getItem("buckets"));
+import "./App.css";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+import Intro from "./components/Intro";
+import NavBar from "./components/NavBar";
+import Portfolio from "./components/Portfolio";
 
 function App() {
-  const [state, dispatch] = useReducer(reducer, buckets);
   return (
-    <>
-      <h1 className="my-8 text-center text-4xl underline">🪣 List 👩🏾‍💻</h1>
+    <div className="App">
+      {/* NavBar */}
+      <NavBar />
+      {/* About Me */}
+      <Intro />
+      {/* Portfolio */}
+      <Portfolio />
+      {/* Contact */}
+      <Contact />
 
-      <main className="container mx-auto flex flex-col items-center gap-y-10 divide-y">
-        <Form />
-        <ul className="space-y-6 py-8">
-          {state?.map((bucket) => (
-            <Bucket key={bucket.id} bucket={bucket} />
-          ))}
-        </ul>
-        <footer className="border-t border-red-200 pt-4 text-9xl">⚰️</footer>
-      </main>
-    </>
+      <Footer />
+    </div>
   );
 }
 

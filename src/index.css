@@ -1,27 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Raleway:wght@500&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   body {
-    @apply bg-gray-900 text-gray-100;
+    @apply font-[Raleway];
   }
 }
+body {
+  margin: 0;
 
-@layer utilities {
-  .gradient-text {
-    @apply bg-clip-text text-transparent;
-  }
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell','Raleway', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif; */
+  font-family: "Raleway";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-  .low {
-    @apply gradient-text bg-gradient-to-r from-blue-400 to-blue-500;
-  }
-
-  .medium {
-    @apply gradient-text bg-gradient-to-r from-yellow-400 to-yellow-500;
-  }
-
-  .high {
-    @apply gradient-text bg-gradient-to-r from-red-400 to-red-500;
-  }
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }
