@@ -1,24 +1,50 @@
-import PropTypes from "prop-types";
+import React from "react";
+import { Link as ScrollLink } from "react-scroll";
+import "./NavBar.css";
 
-export default function NavBar({ links, handleClick }) {
+const NavBar = () => {
   return (
-    <nav className="my-8">
+    <nav>
       <ul className="flex justify-around gap-x-8">
-        {links.map((link) => {
-          return (
-            <li key={link}>
-              <a href={`/${link.toLowerCase()}`} onClick={handleClick}>
-                {link}
-              </a>
-            </li>
-          );
-        })}
+        <li>
+          <ScrollLink
+            to="intro"
+            smooth={true}
+            className="flex-1  cursor-pointer text-3xl font-bold text-white"
+          >
+            <h1>Intro</h1>
+          </ScrollLink>
+        </li>
+        <li>
+          <ScrollLink
+            to="projects"
+            smooth={true}
+            className="flex-1  cursor-pointer text-3xl font-bold text-white"
+          >
+            <h1>Projects</h1>
+          </ScrollLink>
+        </li>
+        <li>
+          <ScrollLink
+            to="contact"
+            smooth={true}
+            className="flex-1  cursor-pointer text-3xl font-bold text-white"
+          >
+            <h1>Contact Me</h1>
+          </ScrollLink>
+        </li>
+        <li>
+          <ScrollLink
+            to="resume"
+            smooth={true}
+            className="flex-1  cursor-pointer text-3xl font-bold text-white"
+          >
+            <h1>Resume</h1>
+          </ScrollLink>
+        </li>
       </ul>
     </nav>
   );
-}
-
-NavBar.propTypes = {
-  links: PropTypes.arrayOf(PropTypes.string).isRequired,
-  handleClick: PropTypes.func.isRequired,
 };
+
+export default NavBar;
